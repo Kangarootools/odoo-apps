@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Post-process the product JSON-LD to add schema.org brand -->
+    <template id="website_product_brand_markup" inherit_id="website_sale.website_sale_layout">
+        <xpath expr="//script[@t-out='product_markup_data']" position="attributes">
+            <attribute name="t-out">request.env['product.template']._seo_add_brand(product_markup_data)</attribute>
+        </xpath>
+    </template>
+</odoo>

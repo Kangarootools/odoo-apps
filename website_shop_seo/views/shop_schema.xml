@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Inject CollectionPage + ItemList JSON-LD on shop/category listing pages -->
+    <template id="website_shop_seo_collection_schema" inherit_id="website_sale.products">
+        <xpath expr="//div[@id='products_grid']" position="before">
+            <script type="application/ld+json"
+                    t-out="request.env['product.template']._seo_collection_markup(products, category)"/>
+        </xpath>
+    </template>
+</odoo>
